@@ -23,4 +23,18 @@ end
       meal.waiter == self
     end
   end
+  
+  
+  def best_tipper
+    oldest_age = 0
+    oldest_customer = nil
+    self.all.each do |customer|
+      if customer.age > oldest_age
+        oldest_age = customer.age
+        oldest_customer = customer
+      end
+    end
+    oldest_customer
+  end
+
 end
